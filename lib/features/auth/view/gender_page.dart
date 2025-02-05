@@ -1,23 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:test/features/auth/view/country_selector_screen.dart';
 
-class GenderSelectorScreen extends StatelessWidget {
-  const GenderSelectorScreen({super.key});
-
-  void nextpage(BuildContext context) {
-    Navigator.push(context,
-        MaterialPageRoute(builder: (context) => CountrySelectorScreen()));
-  }
+class GenderPage extends StatelessWidget {
+  const GenderPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Column(
-      children: [
-        SafeArea(
-          child: Text.rich(
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 29.0),
+      child: Column(
+        children: [
+          Text.rich(
             TextSpan(
-              text: "\nWhat's your gender?",
+              text: "What's your gender?",
               style: const TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
@@ -26,9 +20,9 @@ class GenderSelectorScreen extends StatelessWidget {
               children: [
                 TextSpan(
                   text:
-                      "\nThis helps us to find more relivent content. We won't show this on your public profile.",
+                      "\nThis helps us to find more relevant content. We won't show this on your public profile.",
                   style: const TextStyle(
-                    fontSize: 22,
+                    fontSize: 18,
                     fontWeight: FontWeight.w400,
                     color: Colors.black,
                   ),
@@ -37,13 +31,10 @@ class GenderSelectorScreen extends StatelessWidget {
             ),
             textAlign: TextAlign.center,
           ),
-        ),
-        const SizedBox(height: 20),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 29.0),
-          child: ElevatedButton(
+          const SizedBox(height: 30),
+          ElevatedButton(
             onPressed: () {
-              nextpage(context);
+              // Action for Male button
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.black,
@@ -62,13 +53,10 @@ class GenderSelectorScreen extends StatelessWidget {
               ),
             ),
           ),
-        ),
-        const SizedBox(height: 20),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 29.0),
-          child: ElevatedButton(
+          const SizedBox(height: 20),
+          ElevatedButton(
             onPressed: () {
-              nextpage(context);
+              // Action for Female button
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.black,
@@ -87,13 +75,10 @@ class GenderSelectorScreen extends StatelessWidget {
               ),
             ),
           ),
-        ),
-        const SizedBox(height: 20),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 29.0),
-          child: ElevatedButton(
+          const SizedBox(height: 20),
+          ElevatedButton(
             onPressed: () {
-              nextpage(context);
+              // Action for Specify Others button
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.black,
@@ -112,8 +97,8 @@ class GenderSelectorScreen extends StatelessWidget {
               ),
             ),
           ),
-        ),
-      ],
-    ));
+        ],
+      ),
+    );
   }
 }
